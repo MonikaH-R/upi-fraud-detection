@@ -1,0 +1,25 @@
+name: upi-fraud-detection
+version: 1.0.0
+description: Real-world UPI payment fraud detection environment
+
+tasks:
+  - name: easy-safe-transaction
+    difficulty: easy
+    max_steps: 10
+  - name: medium-mixed-patterns
+    difficulty: medium
+    max_steps: 20
+  - name: hard-complex-fraud
+    difficulty: hard
+    max_steps: 30
+
+action_space:
+  type: discrete
+  size: 3
+  names: ["approve", "reject", "flag"]
+
+observation_space:
+  type: box
+  shape: [6]
+  low: [0, 0, 0, 0, 0, 0]
+  high: [100000, 23, 1, 1, 1, 10]
